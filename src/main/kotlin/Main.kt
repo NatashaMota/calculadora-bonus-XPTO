@@ -8,13 +8,12 @@ fun main(args: Array<String>) {
 }
 
 fun bonusPorCargo(cargo: String, anosExperiencia: Int): Float{
-    val bonus = when (cargo){
+    return when (cargo){
         "gerente" -> calculoGerente(anosExperiencia)
         "coordenador" -> calculoCoordenador(anosExperiencia)
         "engenheiro" -> calculoEngenheiros(anosExperiencia)
         else -> 0f
     }
-    return bonus
 }
 
 fun imprimirResultado(bonus: Float, melhorIdade: Boolean){
