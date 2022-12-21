@@ -2,21 +2,19 @@ fun main(args: Array<String>) {
     var cargo = "coordenador";
     var idade = 60
     var anosExperiencia = 18
-
-    var bonus: Float
     var melhorIdade: Boolean
 
-    if (cargo.contentEquals("gerente", true)){
-        bonus = calculoGerente(anosExperiencia)
-    } else if (cargo.contentEquals("coordenador", true)){
-        bonus = calculoCoordenador(anosExperiencia)
-    } else if(cargo.contentEquals("engenheiro", true)){
-        bonus = calculoEngenheiros(anosExperiencia)
-    } else{
-        bonus = 0f
-    }
+    imprimirResultado(bonusPorCargo(cargo, anosExperiencia), calculoMelhorIdade(idade))
+}
 
-    imprimirResultado(bonus, calculoMelhorIdade(idade))
+fun bonusPorCargo(cargo: String, anosExperiencia: Int): Float{
+    var bonus: Float = 0f
+    when (cargo){
+        "gerente" -> bonus = calculoGerente(anosExperiencia)
+        "coordenador" -> bonus = calculoCoordenador(anosExperiencia)
+        "engenheiro" -> bonus = calculoEngenheiros(anosExperiencia)
+    }
+    return bonus
 }
 
 fun imprimirResultado(bonus: Float, melhorIdade: Boolean){
