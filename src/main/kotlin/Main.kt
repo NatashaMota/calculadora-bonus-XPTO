@@ -8,11 +8,11 @@ fun main(args: Array<String>) {
 }
 
 fun bonusPorCargo(cargo: String, anosExperiencia: Int): Float{
-    var bonus: Float = 0f
-    when (cargo){
-        "gerente" -> bonus = calculoGerente(anosExperiencia)
-        "coordenador" -> bonus = calculoCoordenador(anosExperiencia)
-        "engenheiro" -> bonus = calculoEngenheiros(anosExperiencia)
+    val bonus = when (cargo){
+        "gerente" -> calculoGerente(anosExperiencia)
+        "coordenador" -> calculoCoordenador(anosExperiencia)
+        "engenheiro" -> calculoEngenheiros(anosExperiencia)
+        else -> 0f
     }
     return bonus
 }
