@@ -1,5 +1,5 @@
 fun main(args: Array<String>) {
-    var cargo = "cordenador";
+    var cargo = "coordenador";
     var idade = 60
     var anosExperiencia = 18
 
@@ -8,7 +8,7 @@ fun main(args: Array<String>) {
 
     if (cargo.contentEquals("gerente", true)){
         bonus = calculoGerente(anosExperiencia)
-    } else if (cargo.contentEquals("cordenador", true)){
+    } else if (cargo.contentEquals("coordenador", true)){
         bonus = calculoCoordenador(anosExperiencia)
     } else if(cargo.contentEquals("engenheiro", true)){
         bonus = calculoEngenheiros(anosExperiencia)
