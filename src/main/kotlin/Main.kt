@@ -1,8 +1,23 @@
-fun main(args: Array<String>) {
-    var cargo = "coordenador";
-    var idade = 60
-    var anosExperiencia = 18
-    var melhorIdade: Boolean
+fun main() {
+
+    var cargo: String? = null
+    while ((cargo == null) || (cargo == "")){
+        print("Cargo: ")
+        cargo = readLine()
+
+    }
+
+    var idade: Int? = null
+    while (idade == null){
+        print("Idade: ")
+        idade = readLine()?.toInt()
+    }
+
+    var anosExperiencia: Int? = null
+    while (anosExperiencia == null){
+        print("Anos de experiencia: ")
+        anosExperiencia = readLine()?.toInt()
+    }
 
     imprimirResultado(bonusPorCargo(cargo, anosExperiencia), calculoMelhorIdade(idade))
 }
@@ -11,7 +26,7 @@ fun bonusPorCargo(cargo: String, anosExperiencia: Int): Float{
     return when (cargo){
         "gerente" -> calculoGerente(anosExperiencia)
         "coordenador" -> calculoCoordenador(anosExperiencia)
-        "engenheiro" -> calculoEngenheiros(anosExperiencia)
+        "engenheiro" -> calculoEngenheiros()
         else -> 0f
     }
 }
@@ -23,7 +38,7 @@ fun imprimirResultado(bonus: Float, melhorIdade: Boolean){
     }
 }
 
-fun calculoMelhorIdade(idade: Int) = idade in 60..200;
+fun calculoMelhorIdade(idade: Int) = idade in 60..200
 
 fun calculoGerente(anosExperiencia: Int): Float{
     return if(anosExperiencia >= 2){
@@ -41,6 +56,6 @@ fun calculoCoordenador(anosExperiencia: Int): Float{
     }
 }
 
-fun calculoEngenheiros(anosExperiencia: Int): Float{
+fun calculoEngenheiros(): Float{
     return 1000.00f
 }
